@@ -26,7 +26,7 @@
         data-lte-toggle="treeview"
         role="menu"
         data-accordion="false">
-        <li class="nav-item menu-open">
+        <li class="nav-item m  enu-open">
           <a href="#" class="nav-link active">
             <i class="nav-icon bi bi-speedometer"></i>
             <p>
