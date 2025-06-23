@@ -27,7 +27,7 @@
         role="menu"
         data-accordion="false">
         <li class="nav-item m  enu-open">
-          <a href="#" class="nav-link active">
+          <a href="{{ url('mahasiswa') }}" class="nav-link active">
             <i class="nav-icon bi bi-speedometer"></i>
             <p>
               Mahasiswa
@@ -41,7 +41,7 @@
         role="menu"
         data-accordion="false">
         <li class="nav-item">
-          <a href="prodi.php" class="nav-link">
+          <a href=""{{ url('prodi') }}"" class="nav-link">
             <i class="nav-icon bi bi-journals"></i>
             <p>Program Studi</p>
           </a>

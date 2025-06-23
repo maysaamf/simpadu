@@ -36,7 +36,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Data Mahasiswa</h3>
                             <div class="card-tools">
-                                <a href="tambahmahasiswa.php" class="btn btn-primary">Tambah</a>
+                                <a href="mahasiswa/create" class="btn btn-primary">Tambah</a>
                             </div>
                         </div>
                         <!-- /.card-header -->
@@ -64,10 +64,15 @@
                                             <td>{{ $m->No_hp }}</td>
                                             <td>{{ $m->email }}</td>
                                             <td>{{ $m->Prodi->Nama }}</td>
-                                            <td>
-                                                    <a class="btn btn-danger" href="deletemahasiswa.php?Nim={{ $m->NIM }}"
-                                                        onclick="return confirm('Yakin ingin hapus?')">Delete</a> |
-                                                    <a class="btn btn-warning" href="editmahasiswa.php?Nim={{ $m->NIM }}">Edit</a>
+                                            <td><a href="{{ url("mahasiswa/$m->NIM/edit") }}"
+                                                 class="btn btn-warning">Edit</a>
+                                            <form action="{{ url ("mahasiswa/$m->NIM") }}" method="POST"
+                                                class="d-inline">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button type= "submit" class="btn btn-danger"
+                                                        onclick="return confirm('Yakin ingin hapus?')">Delete</button>
+                                            </form>
                                             </td>
 
                                         </tr>
