@@ -34,9 +34,9 @@
                 <div class="col-md-12">
                     <div class="card mb-4">
                         <div class="card-header">
-                            <h3 class="card-title">Data Mahasiswa</h3>
+                            <h3 class="card-title">Data Prodi</h3>
                             <div class="card-tools">
-                                <a href="mahasiswa/create" class="btn btn-primary">Tambah</a>
+                                <a href="prodi/create" class="btn btn-primary">Tambah</a>
                             </div>
                         </div>
                         <!-- /.card-header -->
@@ -45,35 +45,24 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>NIM</th>
-                                        <th>Nama</th>
-                                        <th>Tanggal Lahir</th>
-                                        <th>Telp</th>
-                                        <th>Email</th>
-                                        <th>Prodi</th>
-                                        <th>foto</th>
+                                        <th>Id</th>
+                                        <th>Nama Prodi</th>
+                                        <th>Kepala Program Studi</th>
+                                        <th>Jurusan</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($mahasiswa as $m)
+                                    @foreach ($prodi as $p)
                                         <tr>
                                             <td>{{ $loop->iteration  }}</td>
-                                            <td>{{ $m->NIM }}</td>
-                                            <td>{{ $m->Nama }}</td>
-                                            <td>{{ $m->Tanggal_Lahir }}</td>
-                                            <td>{{ $m->No_hp }}</td>
-                                            <td>{{ $m->email }}</td>
-                                            <td>{{ $m->Prodi->Nama }}</td>
-                                             <td>
-                                <img src="{{ $m->foto ? asset('storage/' . $m->foto) : asset('img/default.png') }}"
-                                      alt="Foto Mahasiswa"
-                                      width="60"
-                                      class="img-thumbnail">
-                            </td>
-                                            <td><a href="{{ url("mahasiswa/$m->NIM/edit") }}"
+                                            <td>{{ $p->id }}</td>
+                                            <td>{{ $p->Nama }}</td>
+                                            <td>{{ $p->kaprodi }}</td>
+                                            <td>{{ $p->jurusan }}</td>
+                                            <td><a href="{{ url("prodi/$p->id/edit") }}"
                                                  class="btn btn-warning">Edit</a>
-                                            <form action="{{ url ("mahasiswa/$m->NIM") }}" method="POST"
+                                            <form action="{{ url ("prodi/$p->id") }}" method="POST"
                                                 class="d-inline">
                                                 @method('DELETE')
                                                 @csrf

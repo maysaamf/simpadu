@@ -107,7 +107,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="index.php" class="btn btn-warning">Kembali</a>
+                        <a href="{{ url("/mahasiswa") }}" class="btn btn-warning">Kembali</a>
                         <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </form>
